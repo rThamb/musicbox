@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { PlayerComponent } from './components/player/player.component'; 
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'musicbox';
+
+  //@ViewChild(app-player) child: PlayerComponent;
+
 }
