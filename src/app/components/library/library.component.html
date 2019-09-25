@@ -1,1 +1,14 @@
-<p>library works!</p>
+
+
+
+<ul>
+    <li *ngFor="let track of songs" (click)="playSong(track)">     
+      {{ track.title }}
+    </li>
+</ul>
+
+
+
+<p>Test Player from lib component!</p>
+<button (click)="playSongTest($event)" type="button">Button Lib</button>
+<app-player></app-player>

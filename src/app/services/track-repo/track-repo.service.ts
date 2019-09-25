@@ -10,10 +10,10 @@ export class TrackRepoService {
 
   constructor() { 
     this.tracks = [];
-    this.tracks.push(new Track('Hold on', 'drake', 'xxxx', 'hip-hop'));
-    this.tracks.push(new Track('Butterfly', 'Scott', 'xxxx', 'hip-hop'));
-    this.tracks.push(new Track('Empire', 'Jz', 'xxxx', 'hip-hop'));
-    this.tracks.push(new Track('Hn', 'yolo', 'xxxx', 'hip-hop'));
+    this.tracks.push(new Track('Just Hold On', 'Drake', 'QKYkZnxZ3ZA', 'hip-hop'));
+    this.tracks.push(new Track('Empire State of Mind', 'JayZ', 'an3UERXQv2s', 'hip-hop'));
+    this.tracks.push(new Track('Butterfly Effect', 'Travis Scott', 'SiWVfhECEGQ', 'hip-hop'));
+    this.tracks.push(new Track('Sicko Mode', 'Travis Scott', 'd-JBBNg8YKs', 'hip-hop'));
   }
 
   addTrack(track: Track): void{
@@ -27,7 +27,7 @@ export class TrackRepoService {
   }
 
   getTrackByCategory(category: string): Track[]{
-    return null;
+    return this.tracks;
   }
 
 

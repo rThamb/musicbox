@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
+//Classe using, Repo Service
+import { TrackRepoService } from '../../services/track-repo/track-repo.service';
+import {Track } from '../../models/track.js';
+
+import {PlayerComponent } from '../player/player.component';
 
 @Component({
   selector: 'app-library',
@@ -7,9 +12,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibraryComponent implements OnInit {
 
-  constructor() { }
+  private category: string;
+
+  //view should be binded to this
+  private songs: Track[];
+  
+  @ViewChild(PlayerComponent, {static: false}) player: PlayerComponent;
+
+  constructor(public trackRepo: TrackRepoService) {
+    this.songs = trackRepo.getAllTracks();
+   }
 
   ngOnInit() {
+  }
+
+  setCategory(category: string){
+    this.category = category;
+    this.songs = this.trackRepo.getTrackByCategory(category);
+  }
+
+
+  playSongTest(){
+    var id = 'an3UERXQv2s';
+    this.player.playSong(id);
+  }
+
+  playSong(track: Track){
+    this.player.playSong(track.videoId);
   }
 
 }

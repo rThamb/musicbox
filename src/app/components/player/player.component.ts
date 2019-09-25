@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject, Input } from '@angular/core';
 import { TrackDiscoveryService } from '../../services/track-discovery/track-discovery.service';
 
 //Classe using, Repo Service
@@ -12,7 +12,8 @@ import {Track } from '../../models/track.js';
 })
 export class PlayerComponent implements OnInit {
 
-  private videoId: String;
+  //value is set by the parent component
+  videoId: String;
 
   constructor(public trackFinder: TrackDiscoveryService, public trackRepo: TrackRepoService) {}
 
