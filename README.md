@@ -1,6 +1,6 @@
 # Musicbox
 
-A spotify like application that scraps the net to find music you like. Built using Angular version 8.0.6.
+A spotify like application that plays your favourite music. Built using Angular version 8.0.6.
 
 ## Development server
 
