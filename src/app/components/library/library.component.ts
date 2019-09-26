@@ -4,6 +4,7 @@ import { TrackRepoService } from '../../services/track-repo/track-repo.service';
 import {Track } from '../../models/track.js';
 
 import {PlayerComponent } from '../player/player.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-library',
@@ -19,9 +20,12 @@ export class LibraryComponent implements OnInit {
   
   @ViewChild(PlayerComponent, {static: false}) player: PlayerComponent;
 
-  constructor(public trackRepo: TrackRepoService) {
+  constructor(private route: ActivatedRoute, public trackRepo: TrackRepoService) {
+    let genre = this.route.snapshot.paramMap.get('t');
+    this.category = genre; 
     this.songs = trackRepo.getAllTracks();
    }
+
 
   ngOnInit() {
   }

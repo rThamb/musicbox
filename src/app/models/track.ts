@@ -1,4 +1,3 @@
-//You can only export default one thing in a file.
 export class Track {
 
     public title: string;
