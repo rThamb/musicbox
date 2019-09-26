@@ -35,12 +35,6 @@ export class LibraryComponent implements OnInit {
     this.songs = this.trackRepo.getTrackByCategory(category);
   }
 
-
-  playSongTest(){
-    var id = 'an3UERXQv2s';
-    this.player.playSong(id);
-  }
-
   playSong(track: Track){
     this.player.playSong(track.videoId);
   }
