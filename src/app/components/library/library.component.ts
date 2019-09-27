@@ -39,4 +39,8 @@ export class LibraryComponent implements OnInit {
     this.player.playSong(track.videoId);
   }
 
+  reloadLibrary(){
+    this.songs = this.trackRepo.getAllTracks();
+  }
+
 }

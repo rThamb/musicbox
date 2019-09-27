@@ -15,20 +15,12 @@ export class PlayerComponent implements OnInit {
   //value is set by the parent component
   videoId: String;
 
-  constructor(public trackFinder: TrackDiscoveryService, public trackRepo: TrackRepoService) {}
+  constructor(public trackRepo: TrackRepoService) {}
 
   ngOnInit() {}
 
   setVideoId(videoId){
     this.videoId = videoId;
-  }
-
-  outsidePlayEvent(){ 
-
-    debugger;
-    this.trackFinder.findTrackVideo('Just Hold On', "Drake");
-    var id = "QYkUk3MyIJY";
-    this.playSong(id);
   }
 
   playSong(videoId){
