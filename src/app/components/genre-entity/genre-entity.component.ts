@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Genre } from '../../models/genre';
+import { GenreRepoService } from '../../services/genre-repo/genre-repo.service';
+
 
 @Component({
   selector: 'app-genre-entity',
@@ -8,9 +10,12 @@ import { Genre } from '../../models/genre';
 })
 export class GenreEntityComponent implements OnInit {
 
-  public genre: Genre; 
+  public genre: Genre;
+  
+  @Input() 
+  private currentGenre: Genre[];
 
-  constructor() { 
+  constructor(public genreRepo: GenreRepoService) { 
     this.genre = new Genre('');
   }
 
@@ -18,7 +23,8 @@ export class GenreEntityComponent implements OnInit {
   }
 
   addGenre(){
-    alert("Add " + this.genre.name);
+    this.genreRepo.addGenre(this.genre);
+    this.currentGenre.push(this.genre);
   }
 
 }

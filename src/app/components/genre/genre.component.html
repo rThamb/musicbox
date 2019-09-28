@@ -1,7 +1,8 @@
 <p>genre works!</p>
-
+<app-genre-entity [currentGenre]="genres"></app-genre-entity>
 <ul>
     <li *ngFor="let genre of genres">     
       <a routerLink="/library/{{genre.name}}">{{ genre.name }}</a>
     </li>
 </ul>
+

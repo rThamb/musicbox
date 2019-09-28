@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
@@ -10,18 +11,18 @@ export class TrackDiscoveryService {
   private apiKey: string;
 
   constructor(private http: HttpClient) {
-    this.apiKey = ""; 
+    this.apiKey = "AIzaSyArMJZQNzKkK4oHcO2eXTvbt7nC-Y9bOmw"; 
    }
 
-  findTrackVideo(title: string, author: string){
+  findTrackVideo(title: string, author: string): any{
     //spaces need to be replace with +
-    var searchTerm = (title  + "By: " + author).split(' ').join('+');
+    var searchTerm = (title  + " " + author + " official audio").split(' ').join('+');
     let url = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+ searchTerm + "&type=video&key=" + this.apiKey;
-    debugger;
-    this.http.get(url).subscribe(
-      (data: any) => {
-          let vidIdFound = data.items[0].id.videoId;
-      });
+    return this.http.get(url); 
+  }
+
+  reponseVideoIdParser(data): string{
+    return data.items[0].id.videoId;
   }
 
 

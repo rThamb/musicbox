@@ -17,13 +17,16 @@ export class TrackRepoService {
   }
 
   addTrack(track: Track): void{
+    debugger;
+    this.tracks.push(track);
   }
 
   deleteTrack(track: Track): void{
   }
 
   getAllTracks(): Track[]{
-    return this.tracks;
+    var clonedArray = JSON.parse(JSON.stringify(this.tracks))
+    return clonedArray;
   }
 
   getTrackByCategory(category: string): Track[]{

@@ -17,7 +17,12 @@ export class GenreRepoService {
   }
 
   getAllGenre(): Genre[]{
-    return this.genres; 
+    var clonedArray = JSON.parse(JSON.stringify(this.genres))
+    return clonedArray; 
+  }
+
+  addGenre(genre: Genre){
+    this.genres.push(genre);
   }
 
 }
