@@ -11,7 +11,7 @@ export class TrackDiscoveryService {
   private apiKey: string;
 
   constructor(private http: HttpClient) {
-    this.apiKey = "AIzaSyArMJZQNzKkK4oHcO2eXTvbt7nC-Y9bOmw"; 
+    this.apiKey = ""; 
    }
 
   findTrackVideo(title: string, author: string): any{
