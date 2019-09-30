@@ -1,6 +1,8 @@
 
 
 
+
+<!--
 <ul>
     <li *ngFor="let track of songs" (click)="playSong(track)">     
       {{ track.title }}
@@ -10,3 +12,26 @@
 <app-track-entity [genre]="category" [currentLibrary]="songs"></app-track-entity>
 
 <app-player></app-player>
+-->
+
+
+<div class="container track-info">
+<div class="row track-info" *ngFor="let track of songs">
+  <div class="col-xs-2">
+    <img src="https://icon-library.net/images/music-icon-transparent/music-icon-transparent-25.jpg" width="49px" height="49px"/>
+  </div>
+  <div class="col-xs-8">
+    <div class="song-info">
+      <p (click)="playSong(track)"> {{ track.title }} </p>
+    </div>
+    <div class="author-info">
+      <p> {{ track.authour }} </p>
+    </div>
+  </div>
+  <div class="col-xs-2">
+    <button> trash </button>
+  </div>
+</div>
+</div>
+
+

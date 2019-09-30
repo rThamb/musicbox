@@ -1,8 +1,18 @@
-<p>genre works!</p>
 <app-genre-entity [currentGenre]="genres"></app-genre-entity>
-<ul>
-    <li *ngFor="let genre of genres">     
-      <a routerLink="/library/{{genre.name}}">{{ genre.name }}</a>
-    </li>
-</ul>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>
+        <strong>MusicBox</strong>
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6" *ngFor="let genre of genres">
+        <a routerLink="/library/{{genre.name}}" class="tile orange">
+          <h3 class="title">{{ genre.name }}</h3>
+        </a>
+    </div>
+  </div>
+</div>

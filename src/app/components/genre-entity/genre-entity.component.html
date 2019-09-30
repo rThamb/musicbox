@@ -1,16 +1,28 @@
 <!-- Trigger the modal with a button -->
 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i style="font-size:24px" class="fa">&#xf067;</i></button>
 
+
+<!-- https://codepen.io/andreasstorm/pen/gKGbxo -->
+
   <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-dialog modal-sm" style="border-radius: 0px;">
-      <div class="modal-content">
+      <div class="modal-content" style="background-color: #555;">
         <div class="modal-body">
-          <p>Genre Name</p>
+          
           <!-- Need to import FormModule --> 
-          <input [(ngModel)]="genre.name" /> <br/><br/>    
+        <!--
+          <p>Genre Name</p>
+          <input [(ngModel)]="genre.name" />    
+          <button (click)="addGenre($event)" type="button">Save</button>
+-->
+          <label for="inp" class="inp">
+            <input [(ngModel)]="genre.name" type="text" id="inp"/>
+            <span class="label">Genre Name</span>
+            <span class="border"></span>
+          </label>
           <button (click)="addGenre($event)" type="button">Save</button>
         </div>
       </div>

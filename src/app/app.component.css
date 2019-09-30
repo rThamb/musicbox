@@ -1,8 +1,12 @@
+
+
 .mobile-container {
-  max-width: 480px;
+  /*max-width: 480px;*/
+  width: 100%;
+  min-height: 800px;
   margin: auto;
   background-color: #555;
-  
+  padding-top: 10px;
   color: white;
-  border-radius: 10px;
 }
+

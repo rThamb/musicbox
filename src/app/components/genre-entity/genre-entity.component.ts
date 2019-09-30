@@ -25,6 +25,7 @@ export class GenreEntityComponent implements OnInit {
   addGenre(){
     this.genreRepo.addGenre(this.genre);
     this.currentGenre.push(this.genre);
+    this.genre = new Genre('');
   }
 
 }
